@@ -8,29 +8,33 @@ document.addEventListener('DOMContentLoaded', function() {
         images.forEach((img, index) => {
             img.classList.toggle('active', index === currentIndex);
         });
+
+        if (currentIndex === 0) {
+            prevButton.disabled = true;
+        } else {
+            prevButton.disabled = false;
+        }
+
+        if (currentIndex === images.length - 1) {
+            nextButton.disabled = true;
+        } else {
+            nextButton.disabled = false;
+        }
     }
 
     prevButton.addEventListener('click', function() {
-        if (currentIndex === 0) {
-            currentIndex = images.length - 1;  // Si está en la primera imagen, ir a la última.
-        } else {
+        if (currentIndex > 0) {
             currentIndex--;
+            updateCarousel();
         }
-        updateCarousel();
     });
 
     nextButton.addEventListener('click', function() {
-        if (currentIndex === images.length - 1) {
-            currentIndex = 0;  // Si está en la última imagen, ir a la primera.
-        } else {
+        if (currentIndex < images.length - 1) {
             currentIndex++;
+            updateCarousel();
         }
-        updateCarousel();
     });
 
     updateCarousel();
 });
-
-
-
-
