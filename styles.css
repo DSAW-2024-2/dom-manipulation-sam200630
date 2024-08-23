@@ -27,7 +27,7 @@ body {
 
 .carousel-image {
     width: 100%;
-    height: 300px; /* Asegura que todas las imágenes tengan la misma altura */
+    height: 200%;
     display: none;
     object-fit: cover;
 }
@@ -57,22 +57,16 @@ body {
     cursor: not-allowed;
 }
 
-/* Media query para pantallas más pequeñas (móviles) */
-@media (max-width: 600px) {
+@media (max-width: 430px) {
     .carousel-wrapper {
         flex-direction: column;
     }
 
-    .carousel-controls-wrapper {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        width: 100%;
-    }
-
     .carousel-control {
         width: auto;
-        margin: 0 5px;
+        margin: 10px 0; 
     }
 }
+
+
 
